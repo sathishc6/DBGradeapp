@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Configuration</title>
+    <link rel="stylesheet" href="config.css">
+</head>
+<body>
+    <form id="configForm">
+        <label for="apiUrl">API URL:</label>
+        <input type="text" id="apiUrl" name="apiUrl" placeholder="Enter API URL" required>
+
+        <label for="apiToken">API Token:</label>
+        <input type="password" id="apiToken" name="apiToken" placeholder="Enter API Token" required>
+
+        <button type="submit">Save Configuration</button>
+    </form>
+
+    <script>
+        document.getElementById('configForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const apiUrl = document.getElementById('apiUrl').value;
+            const apiToken = document.getElementById('apiToken').value;
+
+            localStorage.setItem('apiUrl', apiUrl);
+            localStorage.setItem('apiToken', apiToken);
+
+            alert('Configuration saved successfully.');
+
+            window.location.href = 'finalecalc.html'; 
+        });
+    </script>
+</body>
+</html>
